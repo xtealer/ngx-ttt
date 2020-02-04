@@ -1,0 +1,27 @@
+.board-item {
+  font-size: 6rem;
+}
+
+.empty {
+  padding-top: 9rem;
+}
+
+p {
+  margin: 0;
+}
+
+.x {
+  color: red;
+}
+
+.o {
+  color: green;
+}
+
+.r-border {
+  border-right: solid 10px black;
+}
+
+.b-border {
+  border-bottom: solid 10px black;
+}

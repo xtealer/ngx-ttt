@@ -1,0 +1,76 @@
+<div *ngIf="incompletePlayers()" class="container">
+  <div class="row justify-content-center">
+    <div class="mt-4">
+      <label for="username">Nombre Jugador&ensp;{{game.currentPlayer.toUpperCase()}}:&ensp;</label>
+      <input #username type="text" [(ngModel)]="playerName" />
+      <button (click)="storeName()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!incompletePlayers()" class="container">
+  <div class="row">
+    <a [routerLink]="['/']" class="btn btn-secondary">Regresar</a>
+    <button class="btn btn-warning" (click)="restartGame()">Reiniciar</button>
+  </div>
+  <div class="row w-75 mx-auto">
+    <div class="col" *ngFor="let token of playerToken">
+      <h2 class="text-secondary"><span class="text-primary">{{game.players[token].name}}</span>&ensp;Jugador&ensp;<span
+          class="text-dark">{{game.players[token].token}}</span></h2>
+      <h2 class="text-secondary">Partidas Jugadas:&ensp;<span
+          class="text-danger">{{game.players[token].gamesPlayed}}</span></h2>
+      <h2 class="text-secondary">Victorias:&ensp;<span class="text-success">{{game.players[token].wonGames}}</span></h2>
+    </div>
+  </div>
+  <div class="row w-100 justify-content-center my-2">
+    <h2 *ngIf="this.game.playerWon" class="text-success">
+      <b>¡Jugador&ensp;{{game.players[this.game.currentPlayer].name}}&ensp;Ha&ensp;Ganado!</b></h2>
+    <h2 *ngIf="this.game.draw" class="text-primary"><b>¡Estan Empate!</b></h2>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-2 text-center r-border px-0">
+      <p [ngClass]="{'empty': !status.disabled[1], 'board-item': true, 'x': status[1], 'o': !status[1]}"
+        (click)="playerChoice(1)">
+        {{this.game.tableItems[1]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[2], 'board-item': true, 'x': status[2], 'o': !status[2]}"
+        (click)="playerChoice(2)">
+        {{this.game.tableItems[2]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[3], 'board-item': true, 'x': status[3], 'o': !status[3]}"
+        (click)="playerChoice(3)">{{this.game.tableItems[3]}}
+      </p>
+    </div>
+    <div class="col-2 px-0 text-center r-border">
+      <p [ngClass]="{'empty': !status.disabled[4], 'board-item': true, 'x': status[4], 'o': !status[4]}"
+        (click)="playerChoice(4)">
+        {{this.game.tableItems[4]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[5], 'board-item': true, 'x': status[5], 'o': !status[5]}"
+        (click)="playerChoice(5)">
+        {{this.game.tableItems[5]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[6], 'board-item': true, 'x': status[6], 'o': !status[6]}"
+        (click)="playerChoice(6)">{{this.game.tableItems[6]}}
+    </div>
+    <div class="col-2 px-0 text-center">
+      <p [ngClass]="{'empty': !status.disabled[7], 'board-item': true, 'x': status[7], 'o': !status[7]}"
+        (click)="playerChoice(7)">
+        {{this.game.tableItems[7]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[8], 'board-item': true, 'x': status[8], 'o': !status[8]}"
+        (click)="playerChoice(8)">
+        {{this.game.tableItems[8]}}
+      </p>
+      <div class="b-border"></div>
+      <p [ngClass]="{'empty': !status.disabled[9], 'board-item': true, 'x': status[9], 'o': !status[9]}"
+        (click)="playerChoice(9)">{{this.game.tableItems[9]}}
+      </p>
+    </div>
+  </div>
+</div>
