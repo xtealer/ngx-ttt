@@ -1,0 +1,12 @@
+h2 {
+  color: rgb(230, 53, 230);
+}
+
+hr {
+  border-color: rgb(230, 53, 230);
+  margin: 0;
+}
+
+.body-container {
+  background-color: black;
+}

@@ -1,9 +1,14 @@
 .board-item {
-  font-size: 6rem;
+  font-size: 4rem;
+}
+
+hr {
+  border-color: rgb(230, 53, 230);
+  margin: 0;
 }
 
 .empty {
-  padding-top: 9rem;
+  padding-top: 6rem;
 }
 
 p {
@@ -15,13 +20,17 @@ p {
 }
 
 .o {
-  color: green;
+  color: rgb(0, 255, 0);
 }
 
 .r-border {
-  border-right: solid 10px black;
+  border-right: solid 10px white;
 }
 
 .b-border {
-  border-bottom: solid 10px black;
+  border-bottom: solid 10px white;
+}
+
+.bg-black {
+  background-color: black;
 }
